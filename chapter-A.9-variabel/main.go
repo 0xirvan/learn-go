@@ -28,5 +28,7 @@ func main() {
 
 	// Deklarasi Variabel menggunakan keyword new, yang mengembalikan pointer
 	pointer := new(string)
-	fmt.Println(pointer)
+	*pointer = "Ini nilai pointer"
+	fmt.Println("Address :", pointer)
+	fmt.Println("Value :", *pointer)
 }
