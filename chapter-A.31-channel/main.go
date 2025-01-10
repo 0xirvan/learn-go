@@ -6,7 +6,7 @@ import (
 )
 
 func printMessage(what chan string) {
-	fmt.Println(<-what)
+	fmt.Println("Received message: ", <-what)
 }
 
 func main() {
@@ -20,6 +20,7 @@ func main() {
 	for _, each := range []string{"Jhon", "Doe", "Golang"} {
 		go func(who string) {
 			data := fmt.Sprintf("Hello, %s", who)
+			fmt.Println("Sending message: ", data)
 			messages <- data
 		}(each)
 	}
